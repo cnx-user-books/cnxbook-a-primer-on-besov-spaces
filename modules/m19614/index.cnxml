@@ -1,0 +1,344 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Classical measures of smoothness</title>
+  <metadata>
+  <md:content-id>m19614</md:content-id><md:title>Classical measures of smoothness</md:title>
+  <md:abstract>The following is a short introduction to Besov spaces
+and their characterization by means of approximation
+procedures as well as wavelet decompositions.</md:abstract>
+  <md:uuid>cb86d4f9-8c69-4145-8a95-0f9b4721e072</md:uuid>
+</metadata>
+
+<content>
+    <para id="id2253696">There exist many different ways of measuring the smoothness
+of a function <m:math><m:mi>f</m:mi></m:math>. The most natural
+one is certainly the order of differentiability, i.e. the maximal index <m:math><m:mi>m</m:mi></m:math>
+such that <m:math><m:mrow><m:msup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>m</m:mi><m:mo>)</m:mo></m:mrow></m:msup><m:mo>=</m:mo><m:msup><m:mrow><m:mo>(</m:mo><m:mfrac><m:mi>d</m:mi><m:mrow><m:mi>d</m:mi><m:mi>x</m:mi></m:mrow></m:mfrac><m:mo>)</m:mo></m:mrow><m:mi>m</m:mi></m:msup><m:mi>f</m:mi></m:mrow></m:math> is continuous. To this particular measure
+of smoothness, we can associate a class of <emphasis>function spaces</emphasis>: if <m:math><m:mi>I</m:mi></m:math>
+is an interval of
+<m:math><m:mi mathvariant="double-struck">R</m:mi></m:math>,
+we denote by <m:math><m:mrow><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>m</m:mi></m:msup><m:mrow><m:mo>(</m:mo><m:mi>I</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> the space of continuous
+functions which have bounded and continuous derivatives, up to the order <m:math><m:mi>m</m:mi></m:math>.
+This space can be
+equipped with the norm</para>
+    <equation id="id2253838"><m:math mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:msup>
+                <m:mrow>
+                  <m:mi mathvariant="script">C</m:mi>
+                </m:mrow>
+                <m:mi>m</m:mi>
+              </m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>I</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:msub>
+          <m:mo>:</m:mo>
+          <m:mo>=</m:mo>
+          <m:munder>
+          <m:mrow>
+  <m:mo movablelimits="true" form="prefix">sup</m:mo>
+      </m:mrow>
+    <m:mrow>
+              <m:mi>l</m:mi>
+              <m:mo>=</m:mo>
+              <m:mn>0</m:mn>
+              <m:mo>,</m:mo>
+              <m:mo>⋯</m:mo>
+              <m:mo>,</m:mo>
+              <m:mi>m</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:munder>
+<m:mrow>
+            <m:mo movablelimits="true" form="prefix">sup</m:mo>
+</m:mrow>        
+    <m:mrow>
+              <m:mi>x</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>I</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:mrow>
+            <m:mo>|</m:mo>
+            <m:msup>
+              <m:mi>f</m:mi>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>l</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:msup>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>|</m:mo>
+          </m:mrow>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254192">for which it is a Banach space.
+(That is, the space is a vector space; the norm satisfies the triangle
+inequality;
+<m:math><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math> is possible only if <m:math><m:mrow><m:mi>f</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>; finally, all Cauchy sequences
+converge: if we
+have a sequence with entries <m:math><m:mrow><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>∈</m:mo><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>m</m:mi></m:msup><m:mrow><m:mo>(</m:mo><m:mi>I</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> for which <m:math><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mi>f</m:mi><m:msup><m:mi>n</m:mi><m:mo>'</m:mo></m:msup></m:msub><m:mrow><m:mo>∥</m:mo></m:mrow></m:mrow></m:math>
+can be
+made arbitrarily small simply by choosing <m:math><m:mrow><m:mi>n</m:mi><m:mo>,</m:mo><m:msup><m:mi>n</m:mi><m:mo>'</m:mo></m:msup></m:mrow></m:math> sufficiently large, then
+the <m:math><m:msub><m:mi>f</m:mi><m:mi>n</m:mi></m:msub></m:math>
+(and all their derivatives up to the <m:math><m:mi>m</m:mi></m:math>th) converge uniformly to some
+function <m:math><m:mi>f</m:mi></m:math>
+in <m:math><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>m</m:mi></m:msup></m:math>
+(and its derivatives).</para>
+    <para id="id2254376">In the case of a multivariate domain
+<m:math><m:mrow><m:mi>Ω</m:mi><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:math>,
+we define <m:math><m:mrow><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>m</m:mi></m:msup><m:mrow><m:mo>(</m:mo><m:mi>Ω</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> to be the space of continuous
+functions which have bounded and continuous partial derivatives
+<m:math><m:mrow><m:msup><m:mi>∂</m:mi><m:mi>α</m:mi></m:msup><m:mi>f</m:mi><m:mo>:</m:mo><m:mo>=</m:mo><m:mfrac><m:mrow><m:msup><m:mi>∂</m:mi><m:mrow><m:mo>|</m:mo><m:mi>α</m:mi><m:mo>|</m:mo></m:mrow></m:msup><m:mi>f</m:mi></m:mrow><m:mrow><m:mi>∂</m:mi><m:msubsup><m:mi>x</m:mi><m:mn>1</m:mn><m:msub><m:mi>α</m:mi><m:mn>1</m:mn></m:msub></m:msubsup><m:mo>⋯</m:mo><m:mi>∂</m:mi><m:msubsup><m:mi>x</m:mi><m:mi>d</m:mi><m:msub><m:mi>α</m:mi><m:mi>d</m:mi></m:msub></m:msubsup></m:mrow></m:mfrac></m:mrow></m:math>,
+for <m:math><m:mrow><m:mrow><m:mo>|</m:mo><m:mi>α</m:mi><m:mo>|</m:mo><m:mo>:</m:mo></m:mrow><m:mo>=</m:mo><m:msub><m:mi>α</m:mi><m:mn>1</m:mn></m:msub><m:mo>+</m:mo><m:mo>⋯</m:mo><m:mo>+</m:mo><m:msub><m:mi>α</m:mi><m:mi>d</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>m</m:mi></m:mrow></m:math>. This
+space can
+also be equipped with the norm</para>
+    <equation id="id2254561">
+      <m:math mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:msup>
+                <m:mrow>
+                  <m:mi mathvariant="script">C</m:mi>
+                </m:mrow>
+                <m:mi>m</m:mi>
+              </m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:mi>Ω</m:mi>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:msub>
+          <m:mo>:</m:mo>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo>∑</m:mo>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>α</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>≤</m:mo>
+              <m:mi>m</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">sup</m:mo>
+            <m:mrow>
+              <m:mi>x</m:mi>
+              <m:mo>∈</m:mo>
+              <m:mi>Ω</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:mrow>
+            <m:mo>|</m:mo>
+            <m:msup>
+              <m:mi>∂</m:mi>
+              <m:mi>α</m:mi>
+            </m:msup>
+            <m:mi>f</m:mi>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>x</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mo>|</m:mo>
+          </m:mrow>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254663">for which it is a Banach space.</para>
+    <para id="id2254669">In many instances, one is somehow interested in measuring smoothness in
+an average sense: for this purpose it is natural to introduce the <emphasis>Sobolev spaces</emphasis><m:math><m:mrow><m:msup><m:mi>W</m:mi><m:mrow><m:mi>m</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup><m:mrow><m:mo>(</m:mo><m:mi>Ω</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> consisting of all functions
+<m:math><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:mrow></m:math> with partial derivatives up to order <m:math><m:mi>m</m:mi></m:math> in <m:math><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:math>. Here <m:math><m:mi>p</m:mi></m:math> is a
+fixed index in <m:math><m:mrow><m:mo>[</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mo>+</m:mo><m:mi>∞</m:mi><m:mo>]</m:mo></m:mrow></m:math>. (Recall that
+<m:math><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub><m:mrow><m:mo>=</m:mo><m:mo>[</m:mo></m:mrow><m:msub><m:mo>∫</m:mo><m:mi>Ω</m:mi></m:msub><m:msup><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mi>p</m:mi></m:msup><m:msup><m:mrow><m:mo>]</m:mo></m:mrow><m:mfrac><m:mn>1</m:mn><m:mi>p</m:mi></m:mfrac></m:msup></m:mrow></m:math> if <m:math><m:mrow><m:mi>p</m:mi><m:mo>&lt;</m:mo><m:mo>+</m:mo><m:mi>∞</m:mi></m:mrow></m:math> and
+<m:math><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>∞</m:mi></m:msup></m:msub><m:mo>=</m:mo><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow></m:mrow></m:math>.) This space is also a Banach space,
+when equipped with the norm</para>
+    <equation id="id2254928"><m:math mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>W</m:mi>
+              <m:mrow>
+                <m:mi>m</m:mi>
+                <m:mo>,</m:mo>
+                <m:mi>p</m:mi>
+              </m:mrow>
+            </m:msup>
+          </m:msub>
+          <m:mo>:</m:mo>
+          <m:mo>=</m:mo>
+          <m:msup>
+            <m:mfenced separators="" open="(" close=")">
+              <m:munder>
+<m:mrow>
+                <m:mo>∑</m:mo>
+</m:mrow> 
+               <m:mrow>
+                  <m:mo>|</m:mo>
+                  <m:mi>α</m:mi>
+                  <m:mo>≤</m:mo>
+                  <m:mi>m</m:mi>
+                </m:mrow>
+              </m:munder>
+              <m:msubsup>
+                <m:mrow>
+                  <m:mo>∥</m:mo>
+                  <m:msup>
+                    <m:mi>∂</m:mi>
+                    <m:mi>α</m:mi>
+                  </m:msup>
+                  <m:mi>f</m:mi>
+                  <m:mo>∥</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:msup>
+                    <m:mi>L</m:mi>
+                    <m:mi>p</m:mi>
+                  </m:msup>
+                </m:mrow>
+                <m:mi>p</m:mi>
+              </m:msubsup>
+            </m:mfenced>
+            <m:mfrac>
+              <m:mn>1</m:mn>
+              <m:mi>p</m:mi>
+            </m:mfrac>
+          </m:msup>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2255030">Note that the norm for <m:math><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>m</m:mi></m:msup></m:math> spaces coincides with the <m:math><m:msup><m:mi>W</m:mi><m:mrow><m:mi>m</m:mi><m:mo>,</m:mo><m:mi>∞</m:mi></m:mrow></m:msup></m:math>
+norm.</para>
+  </content>
+<bib:file>
+<bib:entry id="bid1">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Adams, R.</bib:author>
+        <bib:title>Sobolev Spaces</bib:title>
+        <bib:publisher>Academic Press</bib:publisher>
+        <bib:year>1975</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid2">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Cohen, A.</bib:author>
+        <bib:title>Numerical Analysis of Wavelet Methods</bib:title>
+        <bib:publisher>Elsevier</bib:publisher>
+        <bib:year>2003</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid3">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Daubechies, Ingrid</bib:author>
+        <bib:title>Ten Lectures on Wavelets</bib:title>
+        <bib:publisher>SIAM</bib:publisher>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address>Philadelphia, PA</bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note>Notes from the 1990 CBMS-NSF Conference on Wavelets and Applications at Lowell, MA</bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid4">
+      <bib:book>
+<!--required fields-->
+        <bib:author>DeVore, R.</bib:author>
+        <bib:title>Nonlinear Approximation</bib:title>
+        <bib:publisher>Acta Numerica</bib:publisher>
+        <bib:year>1998</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid5">
+      <bib:article>
+<!--required fields-->
+        <bib:author>R. DeVore, B. Jawerth, and V. Popov, </bib:author>
+        <bib:title>Compression of wavelet decompositions</bib:title>
+        <bib:journal>American Journal of Math</bib:journal>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume>114</bib:volume>
+        <bib:number/>
+        <bib:pages>737-285</bib:pages>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:article>
+    </bib:entry>
+<bib:entry id="bid6">
+      <bib:book>
+<!--required fields-->
+        <bib:author>H. Triebel</bib:author>
+        <bib:title>Theory of Function Spaces</bib:title>
+        <bib:publisher>Birkhauser</bib:publisher>
+        <bib:year>1983</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+</bib:file>
+
+
+</document>

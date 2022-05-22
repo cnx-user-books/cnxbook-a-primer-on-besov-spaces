@@ -1,0 +1,553 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Characterization by approximation properties</title>
+  <metadata>
+  <md:content-id>m19613</md:content-id><md:title>Characterization by approximation properties</md:title>
+  <md:abstract>The following is a short introduction to Besov spaces
+and their characterization by means of approximation
+procedures as well as wavelet decompositions.</md:abstract>
+  <md:uuid>b5792752-6069-4816-a50e-1b3f8f7a6388</md:uuid>
+</metadata>
+
+<content>
+    <para id="id2253696">An important feature of Besov spaces is that they admit equivalent characterization by
+multiresolution approximation properties and by wavelet decompositions.</para>
+    <para id="id2253702">Here we use the following standard
+notation (see <link target-id="bid3" class="cnxn"/> or <link target-id="bid2" class="cnxn"/> for a general treatment): if <m:math><m:mi>f</m:mi></m:math> is function
+we denote by <m:math><m:mrow><m:msub><m:mi>P</m:mi><m:mi>j</m:mi></m:msub><m:mi>f</m:mi></m:mrow></m:math> its projection onto the space <m:math><m:msub><m:mi>V</m:mi><m:mi>j</m:mi></m:msub></m:math>,
+and by <m:math><m:mrow><m:msub><m:mi>Q</m:mi><m:mi>j</m:mi></m:msub><m:mi>f</m:mi><m:mo>=</m:mo><m:msub><m:mi>P</m:mi><m:mrow><m:mi>j</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mi>f</m:mi><m:mo>-</m:mo><m:msub><m:mi>P</m:mi><m:mi>j</m:mi></m:msub><m:mi>f</m:mi></m:mrow></m:math> its projection onto the detail space <m:math><m:msub><m:mi>W</m:mi><m:mi>j</m:mi></m:msub></m:math>.
+The multiscale decomposition of <m:math><m:mi>f</m:mi></m:math> writes</para>
+    <equation id="id2253837"><m:math mode="display">
+        <m:mrow>
+          <m:mi>f</m:mi>
+          <m:mo>=</m:mo>
+          <m:msub>
+            <m:mi>P</m:mi>
+            <m:mn>0</m:mn>
+          </m:msub>
+          <m:mi>f</m:mi>
+          <m:mo>+</m:mo>
+          <m:munder>
+<m:mrow>
+            <m:mo>∑</m:mo>
+</m:mrow>        
+    <m:mrow>
+              <m:mi>j</m:mi>
+              <m:mo>≥</m:mo>
+              <m:mn>0</m:mn>
+            </m:mrow>
+          </m:munder>
+          <m:msub>
+            <m:mi>Q</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:mi>f</m:mi>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2253887">The projectors <m:math><m:msub><m:mi>P</m:mi><m:mi>j</m:mi></m:msub></m:math> and <m:math><m:msub><m:mi>Q</m:mi><m:mi>j</m:mi></m:msub></m:math> can be further expressed in terms of biorthogonal
+scaling functions and wavelets bases:</para>
+    <equation id="id2253922"><m:math mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>P</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:mi>f</m:mi>
+          <m:mo>:</m:mo>
+          <m:mo>=</m:mo>
+          <m:munder>
+<m:mrow>
+            <m:mo>∑</m:mo>
+</m:mrow>        
+    <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>λ</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>=</m:mo>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>f</m:mi>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mover accent="true">
+                <m:mi>ϕ</m:mi>
+                <m:mo>˜</m:mo>
+              </m:mover>
+              <m:mi>λ</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>ϕ</m:mi>
+            <m:mi>λ</m:mi>
+          </m:msub>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:mi> and </m:mi>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:msub>
+            <m:mi>Q</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:mi>f</m:mi>
+          <m:mo>:</m:mo>
+          <m:mo>=</m:mo>
+          <m:munder>
+<m:mrow>         
+   <m:mo>∑</m:mo>
+</m:mrow>        
+    <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>λ</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>=</m:mo>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>f</m:mi>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mover accent="true">
+                <m:mi>ψ</m:mi>
+                <m:mo>˜</m:mo>
+              </m:mover>
+              <m:mi>λ</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>ψ</m:mi>
+            <m:mi>λ</m:mi>
+          </m:msub>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254073">Here we use the simplified notation <m:math><m:msub><m:mi>ϕ</m:mi><m:mi>λ</m:mi></m:msub></m:math> with “<m:math><m:mrow><m:mo>|</m:mo><m:mi>λ</m:mi><m:mo>|</m:mo><m:mo>=</m:mo><m:mi>j</m:mi></m:mrow></m:math>”
+meaning that the functions are picked at resolution <m:math><m:mi>j</m:mi></m:math>. In the
+case where
+<m:math><m:mrow><m:mi>Ω</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:math>,
+these
+have the general from <m:math><m:mrow><m:msub><m:mi>ϕ</m:mi><m:mi>λ</m:mi></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:mo>=</m:mo><m:msub><m:mi>ϕ</m:mi><m:mrow><m:mi>j</m:mi><m:mo>,</m:mo><m:mi>k</m:mi></m:mrow></m:msub><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>:</m:mo><m:mo>=</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>d</m:mi><m:mi>j</m:mi><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup><m:mi>ϕ</m:mi><m:mrow><m:mo>(</m:mo><m:msup><m:mn>2</m:mn><m:mi>j</m:mi></m:msup><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>k</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>,
+bur for a general domain
+<m:math><m:mrow><m:mi>Ω</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:math>
+proper adaptations
+of these bases need to be done near the boundary. We can therefore write</para>
+    <equation id="uid1">
+      <m:math mode="display">
+        <m:mrow>
+          <m:mi>f</m:mi>
+          <m:mo>=</m:mo>
+          <m:mo>∑</m:mo>
+          <m:msub>
+            <m:mi>d</m:mi>
+            <m:mi>λ</m:mi>
+          </m:msub>
+          <m:msub>
+            <m:mi>ψ</m:mi>
+            <m:mi>λ</m:mi>
+          </m:msub>
+          <m:mo>,</m:mo>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:msub>
+            <m:mi>d</m:mi>
+            <m:mi>λ</m:mi>
+          </m:msub>
+          <m:mo>:</m:mo>
+          <m:mo>=</m:mo>
+          <m:mrow>
+            <m:mo>〈</m:mo>
+            <m:mi>f</m:mi>
+            <m:mo>,</m:mo>
+            <m:msub>
+              <m:mover accent="true">
+                <m:mi>ψ</m:mi>
+                <m:mo>˜</m:mo>
+              </m:mover>
+              <m:mi>λ</m:mi>
+            </m:msub>
+            <m:mo>〉</m:mo>
+          </m:mrow>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254573">where we include in this sum the wavelets at all levels <m:math><m:mrow><m:mi>j</m:mi><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math> and
+we incorporate the scaling function <m:math><m:msub><m:mi>ϕ</m:mi><m:mi>λ</m:mi></m:msub></m:math> at the first level <m:math><m:mrow><m:mo>|</m:mo><m:mi>λ</m:mi><m:mo>|</m:mo><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+    <para id="id2254626">Under certain assumptions that we shall discuss below, it is known that
+the Besov norm <m:math><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:msub></m:math> is equivalent to</para>
+    <equation id="uid2">
+      <m:math mode="display">
+        <m:mrow>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>P</m:mi>
+            <m:mn>0</m:mn>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>L</m:mi>
+              <m:mi>p</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:mo>+</m:mo>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+            <m:mo>(</m:mo>
+          </m:mrow>
+          <m:msup>
+            <m:mn>2</m:mn>
+            <m:mrow>
+              <m:mi>s</m:mi>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+            <m:mi>f</m:mi>
+            <m:mo>-</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>P</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>L</m:mi>
+              <m:mi>p</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:msub>
+                <m:mo>)</m:mo>
+                <m:mrow>
+                  <m:mi>j</m:mi>
+                  <m:mo>≥</m:mo>
+                  <m:mn>0</m:mn>
+                </m:mrow>
+              </m:msub>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>ℓ</m:mi>
+              <m:mi>q</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254780">or to</para>
+    <equation id="uid3">
+      <m:math mode="display">
+        <m:mrow>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>P</m:mi>
+            <m:mn>0</m:mn>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>L</m:mi>
+              <m:mi>p</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:mo>+</m:mo>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+            <m:mo>(</m:mo>
+          </m:mrow>
+          <m:msup>
+            <m:mn>2</m:mn>
+            <m:mrow>
+              <m:mi>s</m:mi>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mi>Q</m:mi>
+            <m:mi>j</m:mi>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>L</m:mi>
+              <m:mi>p</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:msub>
+                <m:mo>)</m:mo>
+                <m:mrow>
+                  <m:mi>j</m:mi>
+                  <m:mo>≥</m:mo>
+                  <m:mn>0</m:mn>
+                </m:mrow>
+              </m:msub>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>ℓ</m:mi>
+              <m:mi>q</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254897">Using the equivalence
+<m:math><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>Q</m:mi><m:mi>j</m:mi></m:msub><m:msub><m:mrow><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub><m:mo>∼</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>(</m:mo><m:mi>d</m:mi><m:mo>/</m:mo><m:mn>2</m:mn><m:mo>-</m:mo><m:mi>d</m:mi><m:mo>/</m:mo><m:mi>p</m:mi><m:mo>)</m:mo><m:mi>j</m:mi></m:mrow></m:msup><m:msub><m:mrow><m:mo>∥</m:mo><m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>d</m:mi><m:mi>λ</m:mi></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mo>|</m:mo><m:mi>λ</m:mi><m:mo>|</m:mo><m:mo>=</m:mo><m:mi>j</m:mi></m:mrow></m:msub><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>ℓ</m:mi><m:mi>p</m:mi></m:msup></m:msub></m:mrow></m:math>
+at each level to prove a third
+equivalent norm in
+terms of the wavelet coefficients:</para>
+    <equation id="uid4">
+      <m:math mode="display">
+        <m:mrow>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+            <m:mo>(</m:mo>
+          </m:mrow>
+          <m:msup>
+            <m:mn>2</m:mn>
+            <m:mrow>
+              <m:mi>s</m:mi>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:msup>
+            <m:mn>2</m:mn>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>d</m:mi>
+              <m:mo>/</m:mo>
+              <m:mn>2</m:mn>
+              <m:mo>-</m:mo>
+              <m:mi>d</m:mi>
+              <m:mo>/</m:mo>
+              <m:mi>p</m:mi>
+              <m:mo>)</m:mo>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msup>
+          <m:mrow>
+            <m:mo>∥</m:mo>
+          </m:mrow>
+          <m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msub>
+                <m:mi>d</m:mi>
+                <m:mi>λ</m:mi>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>λ</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>=</m:mo>
+              <m:mi>j</m:mi>
+            </m:mrow>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>ℓ</m:mi>
+              <m:mi>p</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:msub>
+                <m:mo>)</m:mo>
+                <m:mrow>
+                  <m:mi>j</m:mi>
+                  <m:mo>≥</m:mo>
+                  <m:mn>0</m:mn>
+                </m:mrow>
+              </m:msub>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>ℓ</m:mi>
+              <m:mi>q</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2255145">These equivalences mean that the modulus of smoothness
+<m:math><m:mrow><m:msub><m:mi>ω</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>,</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>-</m:mo><m:mi>j</m:mi></m:mrow></m:msup><m:mo>)</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub></m:mrow></m:math>
+in the definition of <m:math><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:math>
+can be replaced either by <m:math><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>P</m:mi><m:mi>j</m:mi></m:msub><m:msub><m:mrow><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub></m:mrow></m:math> or by <m:math><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msub><m:mi>Q</m:mi><m:mi>j</m:mi></m:msub><m:msub><m:mrow><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub></m:mrow></m:math>.
+Their validity requires that
+the spaces <m:math><m:msub><m:mi>V</m:mi><m:mi>j</m:mi></m:msub></m:math> satisfy the following two assumptions:</para>
+    <list id="id2255305" list-type="bulleted">
+      <item id="uid5">The <m:math><m:msub><m:mi>V</m:mi><m:mi>j</m:mi></m:msub></m:math> must satisfy an approximation property that takes the form of a
+<emphasis>direct estimate</emphasis><equation id="id2255337"><m:math mode="display"><m:mrow><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>-</m:mo></m:mrow><m:msub><m:mi>P</m:mi><m:mi>j</m:mi></m:msub><m:msub><m:mrow><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub><m:mo>≤</m:mo><m:mi>C</m:mi><m:msub><m:mi>ω</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>,</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>-</m:mo><m:mi>j</m:mi></m:mrow></m:msup><m:mo>)</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub><m:mo>.</m:mo></m:mrow></m:math></equation>
+Such an estimate ensures that a smooth function will have a fast rate of
+approximation.
+</item>
+      <item id="uid6">They must also satisfy smoothness properties that takes the form of an <emphasis>inverse estimate</emphasis><equation id="id2255445"><m:math mode="display"><m:mrow><m:msub><m:mi>ω</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mrow><m:mo>(</m:mo><m:msub><m:mi>f</m:mi><m:mi>j</m:mi></m:msub><m:mo>,</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub><m:mo>≤</m:mo><m:mi>C</m:mi><m:msup><m:mrow><m:mo>[</m:mo><m:mo movablelimits="true" form="prefix">min</m:mo><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>,</m:mo><m:mi>t</m:mi><m:msup><m:mn>2</m:mn><m:mi>j</m:mi></m:msup><m:mo>)</m:mo></m:mrow><m:mo>]</m:mo></m:mrow><m:mi>n</m:mi></m:msup><m:msub><m:mrow><m:mo>∥</m:mo><m:msub><m:mi>f</m:mi><m:mi>j</m:mi></m:msub><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub><m:mspace width="0.277778em"/><m:mspace width="0.277778em"/><m:mi> if </m:mi><m:mspace width="0.277778em"/><m:mspace width="0.277778em"/><m:msub><m:mi>f</m:mi><m:mi>j</m:mi></m:msub><m:mo>∈</m:mo><m:msub><m:mi>V</m:mi><m:mi>j</m:mi></m:msub><m:mo>.</m:mo></m:mrow></m:math></equation>
+Such an estimate takes into account the smoothness of the spaces <m:math><m:msub><m:mi>V</m:mi><m:mi>j</m:mi></m:msub></m:math>: it
+ensures
+that a function that is approximated at a sufficiently fast rate rate by
+these spaces
+should also have some smoothness.
+</item>
+    </list>
+    <para id="id2255615">One can show that the direct estimate is satisfied if and only if
+all polynomials up to order <m:math><m:mrow><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:math>
+can be written as combinations of the scaling functions <m:math><m:msub><m:mi>ϕ</m:mi><m:mi>λ</m:mi></m:msub></m:math> in <m:math><m:msub><m:mi>V</m:mi><m:mi>j</m:mi></m:msub></m:math>,
+or equivalently if the dual wavelets <m:math><m:msub><m:mover accent="true"><m:mi>ψ</m:mi><m:mo>˜</m:mo></m:mover><m:mi>λ</m:mi></m:msub></m:math>
+have <m:math><m:mi>n</m:mi></m:math> vanishing moments. On the other hand, the inverse estimate
+requires that the scaling functions <m:math><m:msub><m:mi>ϕ</m:mi><m:mi>λ</m:mi></m:msub></m:math> that generates <m:math><m:msub><m:mi>V</m:mi><m:mi>j</m:mi></m:msub></m:math> are
+smooth in the sense of belonging to <m:math><m:msup><m:mi>W</m:mi><m:mrow><m:mi>n</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:math>.
+Note that the direct estimate immediately implies that the
+expression <link target-id="uid2" class="cnxn"/> is less than <m:math><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:msub></m:math>. A more refined
+mechanism, using the
+inverse estimate (as well as some discrete Hardy inequalities) is used to
+prove the full equivalence between <m:math><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:msub></m:math> and <link target-id="uid3" class="cnxn"/> or <link target-id="uid4" class="cnxn"/>.
+We refer to chapter III in <link target-id="bid2" class="cnxn"/> for a detailed proof of these results.</para>
+    <para id="id2255838">These equivalences show that
+the convergence rate <m:math><m:msup><m:mi>N</m:mi><m:mrow><m:mo>-</m:mo><m:mi>t</m:mi><m:mo>/</m:mo><m:mi>d</m:mi></m:mrow></m:msup></m:math> (<m:math><m:mrow><m:mi>N</m:mi><m:mo>=</m:mo><m:mi> dim </m:mi><m:mo>(</m:mo><m:msub><m:mi>V</m:mi><m:mi>j</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math>)
+can be achieved by the linear
+multiscale approximation process <m:math><m:mrow><m:mi>f</m:mi><m:mo>↦</m:mo><m:msub><m:mi>P</m:mi><m:mi>f</m:mi></m:msub></m:mrow></m:math>, if and only if the function has roughly
+“<m:math><m:mi>t</m:mi></m:math> derivatives
+in <m:math><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:math>”.</para>
+  </content>
+<bib:file>
+<bib:entry id="bid1">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Adams, R.</bib:author>
+        <bib:title>Sobolev Spaces</bib:title>
+        <bib:publisher>Academic Press</bib:publisher>
+        <bib:year>1975</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid2">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Cohen, A.</bib:author>
+        <bib:title>Numerical Analysis of Wavelet Methods</bib:title>
+        <bib:publisher>Elsevier</bib:publisher>
+        <bib:year>2003</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid3">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Daubechies, Ingrid</bib:author>
+        <bib:title>Ten Lectures on Wavelets</bib:title>
+        <bib:publisher>SIAM</bib:publisher>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address>Philadelphia, PA</bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note>Notes from the 1990 CBMS-NSF Conference on Wavelets and Applications at Lowell, MA</bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid4">
+      <bib:book>
+<!--required fields-->
+        <bib:author>DeVore, R.</bib:author>
+        <bib:title>Nonlinear Approximation</bib:title>
+        <bib:publisher>Acta Numerica</bib:publisher>
+        <bib:year>1998</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid5">
+      <bib:article>
+<!--required fields-->
+        <bib:author>R. DeVore, B. Jawerth, and V. Popov, </bib:author>
+        <bib:title>Compression of wavelet decompositions</bib:title>
+        <bib:journal>American Journal of Math</bib:journal>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume>114</bib:volume>
+        <bib:number/>
+        <bib:pages>737-285</bib:pages>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:article>
+    </bib:entry>
+<bib:entry id="bid6">
+      <bib:book>
+<!--required fields-->
+        <bib:author>H. Triebel</bib:author>
+        <bib:title>Theory of Function Spaces</bib:title>
+        <bib:publisher>Birkhauser</bib:publisher>
+        <bib:year>1983</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+</bib:file>
+
+
+</document>

@@ -1,0 +1,428 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Besov spaces</title>
+  <metadata>
+  <md:content-id>m19611</md:content-id><md:title>Besov spaces</md:title>
+  <md:abstract>The following is a short introduction to Besov spaces
+and their characterization by means of approximation
+procedures as well as wavelet decompositions.</md:abstract>
+  <md:uuid>b38335ba-532c-432f-b3f6-c5b438c1625e</md:uuid>
+</metadata>
+
+<content>
+    <para id="id2253696">The definition of “order of smoothness <m:math><m:mi>s</m:mi></m:math> in <m:math><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:math>” for <m:math><m:mi>s</m:mi></m:math> non-integer and
+<m:math><m:mi>p</m:mi></m:math> different from 2 or <m:math><m:mi>∞</m:mi></m:math> is more subject to arbitrary choices.
+Among others, one may consider:</para>
+    <list id="id2253757" list-type="bulleted"><item id="uid1">Sobolev spaces <m:math><m:msup><m:mi>W</m:mi><m:mrow><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:math> defined (if <m:math><m:mrow><m:mi>m</m:mi><m:mo>&lt;</m:mo><m:mi>s</m:mi><m:mo>&lt;</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math>) by
+<equation id="id2253814"><m:math mode="display"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>W</m:mi><m:mrow><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:msub><m:mo>:</m:mo><m:mo>=</m:mo><m:msup><m:mfenced separators="" open="(" close=")"><m:msubsup><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mrow><m:msup><m:mi>W</m:mi><m:mrow><m:mi>m</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:mrow><m:mi>p</m:mi></m:msubsup><m:mo>+</m:mo><m:munder><m:mrow><m:mo>∑</m:mo></m:mrow><m:mrow><m:mo>|</m:mo><m:mi>α</m:mi><m:mo>|</m:mo><m:mo>=</m:mo><m:mi>m</m:mi></m:mrow></m:munder><m:msub><m:mo>∫</m:mo><m:mrow><m:mi>Ω</m:mi><m:mo>×</m:mo><m:mi>Ω</m:mi></m:mrow></m:msub><m:mfrac><m:mrow><m:mrow><m:mo>|</m:mo></m:mrow><m:msup><m:mi>∂</m:mi><m:mi>α</m:mi></m:msup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:msup><m:mi>∂</m:mi><m:mi>α</m:mi></m:msup><m:msup><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mi>p</m:mi></m:msup></m:mrow><m:msup><m:mrow><m:mo>|</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>y</m:mi><m:mo>|</m:mo></m:mrow><m:mrow><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>-</m:mo><m:mi>m</m:mi><m:mo>)</m:mo><m:mi>p</m:mi><m:mo>+</m:mo><m:mi>d</m:mi></m:mrow></m:msup></m:mfrac><m:mi>d</m:mi><m:mi>x</m:mi><m:mi>d</m:mi><m:mi>y</m:mi></m:mfenced><m:mfrac><m:mn>1</m:mn><m:mi>p</m:mi></m:mfrac></m:msup></m:mrow></m:math></equation>
+These spaces coincide with those defined by means of Fourier transform
+when <m:math><m:mrow><m:mi>p</m:mi><m:mo>=</m:mo><m:mn>2</m:mn></m:mrow></m:math> (see <link target-id="bid6" class="cnxn"/> for a general treatment).
+</item>
+      <item id="uid2">Bessel-potential spaces <m:math><m:msup><m:mi>H</m:mi><m:mrow><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:math> defined by means of the Fourier transform
+operator <m:math><m:mi mathvariant="script">F</m:mi></m:math>,
+<equation id="id2254341"><m:math mode="display"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>H</m:mi><m:mrow><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:msub><m:mo>=</m:mo><m:msup><m:mfenced separators="" open="(" close=")"><m:msubsup><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:mrow><m:mi>p</m:mi></m:msubsup><m:mrow><m:mo>+</m:mo><m:mo>∥</m:mo></m:mrow><m:msup><m:mrow><m:mi mathvariant="script">F</m:mi></m:mrow><m:mrow><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mo>|</m:mo><m:mo>·</m:mo><m:mo>|</m:mo></m:mrow><m:mi>s</m:mi></m:msup><m:msubsup><m:mrow><m:mo>)</m:mo><m:mi mathvariant="script">F</m:mi><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:mrow><m:mi>p</m:mi></m:msubsup></m:mfenced><m:mfrac><m:mrow><m:mn>1</m:mn><m:mi>p</m:mi></m:mrow><m:mo>.</m:mo></m:mfrac></m:msup></m:mrow></m:math></equation>
+These spaces coincides with the Sobolev spaces <m:math><m:msup><m:mi>W</m:mi><m:mrow><m:mi>m</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup></m:math> when <m:math><m:mi>m</m:mi></m:math>
+is an integer and <m:math><m:mrow><m:mn>1</m:mn><m:mo>&lt;</m:mo><m:mi>p</m:mi><m:mo>&lt;</m:mo><m:mo>+</m:mo><m:mi>∞</m:mi></m:mrow></m:math> (see <link target-id="bid1" class="cnxn"/>, p.38),
+but their definition requires that
+<m:math><m:mrow><m:mi>Ω</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:math>
+in order to apply the Fourier transform.
+</item>
+      <item id="uid3">Besov spaces <m:math><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:math>, involving an extra parameter <m:math><m:mi>q</m:mi></m:math>
+that we define below through finite differences. These spaces include most
+of those
+that we have listed so far as particular cases. As we shall see,
+one of their main interest is that they can be exactly
+characterized by multiresolution approximation error,
+as well as from the size properties of the wavelet coefficients.
+</item>
+    </list>
+    <para id="id2254619">We define the <m:math><m:mi>n</m:mi></m:math>-th order <m:math><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:math> modulus of smoothness of <m:math><m:mi>f</m:mi></m:math> by</para>
+    <equation id="id2254654">
+      <m:math mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mi>ω</m:mi>
+            <m:mi>n</m:mi>
+          </m:msub>
+          <m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>,</m:mo>
+              <m:mi>t</m:mi>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>L</m:mi>
+              <m:mi>p</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:mo>=</m:mo>
+          <m:munder>
+            <m:mo movablelimits="true" form="prefix">sup</m:mo>
+            <m:mrow>
+              <m:mo>|</m:mo>
+              <m:mi>h</m:mi>
+              <m:mo>|</m:mo>
+              <m:mo>≤</m:mo>
+              <m:mi>t</m:mi>
+            </m:mrow>
+          </m:munder>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:msubsup>
+                <m:mi>Δ</m:mi>
+                <m:mi>h</m:mi>
+                <m:mi>n</m:mi>
+              </m:msubsup>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:msup>
+                <m:mi>L</m:mi>
+                <m:mi>p</m:mi>
+              </m:msup>
+              <m:mrow>
+                <m:mo>(</m:mo>
+                <m:msub>
+                  <m:mi>Ω</m:mi>
+                  <m:mrow>
+                    <m:mi>h</m:mi>
+                    <m:mo>,</m:mo>
+                    <m:mi>n</m:mi>
+                  </m:mrow>
+                </m:msub>
+                <m:mo>)</m:mo>
+              </m:mrow>
+            </m:mrow>
+          </m:msub>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254766">where <m:math><m:mrow><m:msub><m:mi>Ω</m:mi><m:mrow><m:mi>h</m:mi><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:msub><m:mo>:</m:mo><m:mo>=</m:mo><m:mrow><m:mo>{</m:mo><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi><m:mspace width="0.277778em"/><m:mo>;</m:mo><m:mspace width="0.277778em"/><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>k</m:mi><m:mi>h</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi><m:mo>,</m:mo><m:mspace width="0.277778em"/><m:mi>k</m:mi><m:mo>=</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:mi>n</m:mi><m:mo>}</m:mo></m:mrow></m:mrow></m:math>.
+Here we measure the “size” of <m:math><m:mrow><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mi>n</m:mi></m:msubsup><m:mi>f</m:mi></m:mrow></m:math> in
+<m:math><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:math>-norm,
+where we restrict to <m:math><m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup><m:mrow><m:mo>(</m:mo><m:msub><m:mi>Ω</m:mi><m:mrow><m:mi>h</m:mi><m:mo>,</m:mo><m:mi>n</m:mi></m:mrow></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> to ensure that all the arguments
+<m:math><m:mrow><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>k</m:mi><m:mi>h</m:mi></m:mrow></m:math>
+occurring in the computation of <m:math><m:mrow><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mi>n</m:mi></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> still live in <m:math><m:mi>Ω</m:mi></m:math>.
+For <m:math><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>q</m:mi><m:mo>≥</m:mo><m:mn>1</m:mn></m:mrow></m:math>, <m:math><m:mrow><m:mi>s</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>, the Besov spaces <m:math><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:math> consists of those
+functions <m:math><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:mrow></m:math> such that</para>
+    <equation id="uid4">
+      <m:math mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mrow>
+              <m:mo>(</m:mo>
+              <m:msup>
+                <m:mn>2</m:mn>
+                <m:mrow>
+                  <m:mi>s</m:mi>
+                  <m:mi>j</m:mi>
+                </m:mrow>
+              </m:msup>
+              <m:msub>
+                <m:mi>ω</m:mi>
+                <m:mi>n</m:mi>
+              </m:msub>
+              <m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:mi>f</m:mi>
+                  <m:mo>,</m:mo>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mo>-</m:mo>
+                      <m:mi>j</m:mi>
+                    </m:mrow>
+                  </m:msup>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:msup>
+                  <m:mi>L</m:mi>
+                  <m:mi>p</m:mi>
+                </m:msup>
+              </m:msub>
+              <m:mo>)</m:mo>
+            </m:mrow>
+            <m:mrow>
+              <m:mi>j</m:mi>
+              <m:mo>≥</m:mo>
+              <m:mn>0</m:mn>
+            </m:mrow>
+          </m:msub>
+          <m:mo>∈</m:mo>
+          <m:msup>
+            <m:mi>ℓ</m:mi>
+            <m:mi>q</m:mi>
+          </m:msup>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2255136">Here <m:math><m:mi>n</m:mi></m:math> is an integer strictly larger than <m:math><m:mi>s</m:mi></m:math>.
+A natural norm for such a space is then given by</para>
+    <equation id="uid5">
+      <m:math mode="display">
+        <m:mrow>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msubsup>
+              <m:mi>B</m:mi>
+              <m:mrow>
+                <m:mi>p</m:mi>
+                <m:mo>,</m:mo>
+                <m:mi>q</m:mi>
+              </m:mrow>
+              <m:mi>s</m:mi>
+            </m:msubsup>
+          </m:msub>
+          <m:mo>:</m:mo>
+          <m:mo>=</m:mo>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:mi>f</m:mi>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>L</m:mi>
+              <m:mi>p</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:mo>+</m:mo>
+          <m:msub>
+            <m:mrow>
+              <m:mo>∥</m:mo>
+              <m:msub>
+                <m:mrow>
+                  <m:mo>(</m:mo>
+                  <m:msup>
+                    <m:mn>2</m:mn>
+                    <m:mrow>
+                      <m:mi>s</m:mi>
+                      <m:mi>j</m:mi>
+                    </m:mrow>
+                  </m:msup>
+                  <m:msub>
+                    <m:mi>ω</m:mi>
+                    <m:mi>n</m:mi>
+                  </m:msub>
+                  <m:msub>
+                    <m:mrow>
+                      <m:mo>(</m:mo>
+                      <m:mi>f</m:mi>
+                      <m:mo>,</m:mo>
+                      <m:msup>
+                        <m:mn>2</m:mn>
+                        <m:mrow>
+                          <m:mo>-</m:mo>
+                          <m:mi>j</m:mi>
+                        </m:mrow>
+                      </m:msup>
+                      <m:mo>)</m:mo>
+                    </m:mrow>
+                    <m:msup>
+                      <m:mi>L</m:mi>
+                      <m:mi>p</m:mi>
+                    </m:msup>
+                  </m:msub>
+                  <m:mo>)</m:mo>
+                </m:mrow>
+                <m:mrow>
+                  <m:mi>j</m:mi>
+                  <m:mo>≥</m:mo>
+                  <m:mn>0</m:mn>
+                </m:mrow>
+              </m:msub>
+              <m:mo>∥</m:mo>
+            </m:mrow>
+            <m:msup>
+              <m:mi>ℓ</m:mi>
+              <m:mi>q</m:mi>
+            </m:msup>
+          </m:msub>
+          <m:mo>.</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2255306">If <m:math><m:mrow><m:mi>q</m:mi><m:mo>=</m:mo><m:mi>∞</m:mi></m:mrow></m:math>, the condition <link target-id="uid4" class="cnxn"/> simply means that
+<m:math><m:mrow><m:mrow><m:mo>∥</m:mo></m:mrow><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mi>n</m:mi></m:msubsup><m:msub><m:mrow><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub><m:mo>≤</m:mo><m:mi>C</m:mi><m:msup><m:mi>h</m:mi><m:mrow><m:mo>-</m:mo><m:mi>s</m:mi></m:mrow></m:msup></m:mrow></m:math> for <m:math><m:mrow><m:mo>|</m:mo><m:mi>h</m:mi><m:mo>|</m:mo><m:mo>≤</m:mo><m:mn>1</m:mn></m:mrow></m:math>. For <m:math><m:mrow><m:mi>q</m:mi><m:mo>&lt;</m:mo><m:mi>∞</m:mi></m:mrow></m:math>, the decay condition on <m:math><m:mrow><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mi>n</m:mi></m:msubsup><m:mi>f</m:mi></m:mrow></m:math>
+is slightly stronger, since we require that the sequence
+<m:math><m:mrow><m:msubsup><m:mrow><m:mo>(</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mi>s</m:mi><m:mi>j</m:mi></m:mrow></m:msup><m:msub><m:mi>ω</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>,</m:mo><m:msup><m:mn>2</m:mn><m:mrow><m:mo>-</m:mo><m:mi>j</m:mi></m:mrow></m:msup><m:mo>)</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub><m:mo>)</m:mo></m:mrow><m:mrow><m:mi>j</m:mi><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow><m:mi>q</m:mi></m:msubsup><m:mi>i</m:mi></m:mrow></m:math> be summable.
+The space <m:math><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:math> also represents “<m:math><m:mi>s</m:mi></m:math> order of smoothness measured in
+<m:math><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:math>";
+the parameter <m:math><m:mi>q</m:mi></m:math> allows a finer tuning on
+the degree of smoothness - one has <m:math><m:mrow><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:msub><m:mi>q</m:mi><m:mn>1</m:mn></m:msub></m:mrow><m:mi>s</m:mi></m:msubsup><m:mo>⊂</m:mo><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:msub><m:mi>q</m:mi><m:mn>2</m:mn></m:msub></m:mrow><m:mi>s</m:mi></m:msubsup></m:mrow></m:math>
+if <m:math><m:mrow><m:msub><m:mi>q</m:mi><m:mn>1</m:mn></m:msub><m:mo>≤</m:mo><m:msub><m:mi>q</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math> - but plays a minor role in comparison to <m:math><m:mi>s</m:mi></m:math> since
+clearly</para>
+    <equation id="id2255662">
+      <m:math mode="display">
+        <m:mrow>
+          <m:msubsup>
+            <m:mi>B</m:mi>
+            <m:mrow>
+              <m:mi>p</m:mi>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>q</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+          </m:msubsup>
+          <m:mo>⊂</m:mo>
+          <m:msubsup>
+            <m:mi>B</m:mi>
+            <m:mrow>
+              <m:mi>p</m:mi>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>q</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+          </m:msubsup>
+          <m:mo>,</m:mo>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:mi> if </m:mi>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:msub>
+            <m:mi>s</m:mi>
+            <m:mn>1</m:mn>
+          </m:msub>
+          <m:mo>≥</m:mo>
+          <m:msub>
+            <m:mi>s</m:mi>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2255764">regardless of the values of <m:math><m:msub><m:mi>q</m:mi><m:mn>1</m:mn></m:msub></m:math> and <m:math><m:msub><m:mi>q</m:mi><m:mn>2</m:mn></m:msub></m:math>. Roughly speaking,
+smoothness of order <m:math><m:mi>s</m:mi></m:math> in <m:math><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:math> is expressed here by the fact that, for
+<m:math><m:mi>n</m:mi></m:math> large enough,
+<m:math><m:mrow><m:msub><m:mi>ω</m:mi><m:mi>n</m:mi></m:msub><m:msub><m:mrow><m:mo>(</m:mo><m:mi>f</m:mi><m:mo>,</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:mi>p</m:mi></m:msup></m:msub></m:mrow></m:math> goes to 0 like
+<m:math><m:mrow><m:mi mathvariant="script">O</m:mi><m:mo>(</m:mo><m:msup><m:mi>t</m:mi><m:mi>s</m:mi></m:msup><m:mo>)</m:mo></m:mrow></m:math> as <m:math><m:mrow><m:mi>t</m:mi><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+    <para id="id2255911">Clearly <m:math><m:mrow><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>s</m:mi></m:msup><m:mo>=</m:mo><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>∞</m:mi><m:mo>,</m:mo><m:mi>∞</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:mrow></m:math> when <m:math><m:mi>s</m:mi></m:math> is not an integer. It can also
+be proved
+that when <m:math><m:mi>s</m:mi></m:math> is not an integer <m:math><m:mrow><m:msup><m:mi>W</m:mi><m:mrow><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow></m:msup><m:mo>=</m:mo><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>p</m:mi><m:mo>,</m:mo><m:mi>p</m:mi></m:mrow><m:mi>s</m:mi></m:msubsup></m:mrow></m:math>. These spaces are different
+from one another for integer values of <m:math><m:mi>s</m:mi></m:math>, except when <m:math><m:mrow><m:mi>p</m:mi><m:mo>=</m:mo><m:mn>2</m:mn></m:mrow></m:math> in which case
+<m:math><m:mrow><m:msup><m:mi>H</m:mi><m:mi>s</m:mi></m:msup><m:mo>=</m:mo><m:msubsup><m:mi>B</m:mi><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mn>2</m:mn></m:mrow><m:mi>s</m:mi></m:msubsup></m:mrow></m:math> for all values of <m:math><m:mi>s</m:mi></m:math> (see <link target-id="bid6" class="cnxn"/>, p.38).</para>
+  </content>
+<bib:file>
+<bib:entry id="bid1">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Adams, R.</bib:author>
+        <bib:title>Sobolev Spaces</bib:title>
+        <bib:publisher>Academic Press</bib:publisher>
+        <bib:year>1975</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid2">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Cohen, A.</bib:author>
+        <bib:title>Numerical Analysis of Wavelet Methods</bib:title>
+        <bib:publisher>Elsevier</bib:publisher>
+        <bib:year>2003</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid3">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Daubechies, Ingrid</bib:author>
+        <bib:title>Ten Lectures on Wavelets</bib:title>
+        <bib:publisher>SIAM</bib:publisher>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address>Philadelphia, PA</bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note>Notes from the 1990 CBMS-NSF Conference on Wavelets and Applications at Lowell, MA</bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid4">
+      <bib:book>
+<!--required fields-->
+        <bib:author>DeVore, R.</bib:author>
+        <bib:title>Nonlinear Approximation</bib:title>
+        <bib:publisher>Acta Numerica</bib:publisher>
+        <bib:year>1998</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid5">
+      <bib:article>
+<!--required fields-->
+        <bib:author>R. DeVore, B. Jawerth, and V. Popov, </bib:author>
+        <bib:title>Compression of wavelet decompositions</bib:title>
+        <bib:journal>American Journal of Math</bib:journal>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume>114</bib:volume>
+        <bib:number/>
+        <bib:pages>737-285</bib:pages>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:article>
+    </bib:entry>
+<bib:entry id="bid6">
+      <bib:book>
+<!--required fields-->
+        <bib:author>H. Triebel</bib:author>
+        <bib:title>Theory of Function Spaces</bib:title>
+        <bib:publisher>Birkhauser</bib:publisher>
+        <bib:year>1983</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+</bib:file>
+
+
+</document>

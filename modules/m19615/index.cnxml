@@ -1,0 +1,323 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Embeddings</title>
+  <metadata>
+  <md:content-id>m19615</md:content-id><md:title>Embeddings</md:title>
+  <md:abstract>The following is a short introduction to Besov spaces
+and their characterization by means of approximation
+procedures as well as wavelet decompositions.</md:abstract>
+  <md:uuid>cedb7450-2464-45fb-8e74-b6e794753603</md:uuid>
+</metadata>
+
+<content>
+    <para id="id2253696">Sobolev, Besov and Bessel-potential spaces satisfy two obvious embedding
+relations:</para>
+    <list id="id2253704" list-type="bulleted">
+      <item id="uid1">For fixed <m:math><m:mi>p</m:mi></m:math> (and arbitrary <m:math><m:mi>q</m:mi></m:math> in the case of Besov spaces), the
+spaces get larger as <m:math><m:mi>s</m:mi></m:math> decreases.
+</item>
+      <item id="uid2">In the case where <m:math><m:mi>Ω</m:mi></m:math> a bounded domain, for fixed <m:math><m:mi>s</m:mi></m:math> (and fixed <m:math><m:mi>q</m:mi></m:math>
+in the case
+of Besov spaces), the spaces get larger as <m:math><m:mi>p</m:mi></m:math> decrease, since
+<m:math><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:msub><m:mi>p</m:mi><m:mn>1</m:mn></m:msub></m:msup></m:msub><m:mo>≤</m:mo><m:mi>C</m:mi><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:msup><m:mi>L</m:mi><m:msub><m:mi>p</m:mi><m:mn>2</m:mn></m:msub></m:msup></m:msub></m:mrow></m:math> if <m:math><m:mrow><m:msub><m:mi>p</m:mi><m:mn>1</m:mn></m:msub><m:mo>≤</m:mo><m:msub><m:mi>p</m:mi><m:mn>2</m:mn></m:msub></m:mrow></m:math>.
+</item>
+    </list>
+    <para id="id2253884">A less trivial type of embedding is known as <emphasis>Sobolev embedding</emphasis>. In
+the case
+of Sobolev spaces, it states that the continuous embedding</para>
+    <equation id="id2253895">
+      <m:math mode="display">
+        <m:mrow>
+          <m:msup>
+            <m:mi>W</m:mi>
+            <m:mrow>
+              <m:msub>
+                <m:mi>s</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>p</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+            </m:mrow>
+          </m:msup>
+          <m:mo>⊂</m:mo>
+          <m:msup>
+            <m:mi>W</m:mi>
+            <m:mrow>
+              <m:msub>
+                <m:mi>s</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>p</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+            </m:mrow>
+          </m:msup>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:mi> if </m:mi>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:msub>
+            <m:mi>p</m:mi>
+            <m:mn>1</m:mn>
+          </m:msub>
+          <m:mo>≤</m:mo>
+          <m:msub>
+            <m:mi>p</m:mi>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:mi> and </m:mi>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:msub>
+            <m:mi>s</m:mi>
+            <m:mn>1</m:mn>
+          </m:msub>
+          <m:mo>-</m:mo>
+          <m:msub>
+            <m:mi>s</m:mi>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mo>≥</m:mo>
+          <m:mi>d</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>/</m:mo>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>/</m:mo>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254057">holds except in the case where
+<m:math><m:mrow><m:msub><m:mi>p</m:mi><m:mn>2</m:mn></m:msub><m:mo>=</m:mo><m:mo>+</m:mo><m:mi>∞</m:mi></m:mrow></m:math> and <m:math><m:msub><m:mi>s</m:mi><m:mn>2</m:mn></m:msub></m:math> is an integer, for which one needs
+to assume
+<m:math><m:mrow><m:msub><m:mi>s</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>2</m:mn></m:msub><m:mo>&gt;</m:mo><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:msub><m:mi>p</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:msub><m:mi>p</m:mi><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+For example in the univariate case, any <m:math><m:msup><m:mi>H</m:mi><m:mn>1</m:mn></m:msup></m:math> function has also <m:math><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msup></m:math>
+smoothness.
+In the case of Besov spaces the embedding relation are given by</para>
+    <equation id="id2253077">
+      <m:math mode="display">
+        <m:mrow>
+          <m:msubsup>
+            <m:mi>B</m:mi>
+            <m:mrow>
+              <m:msub>
+                <m:mi>p</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>p</m:mi>
+                <m:mn>1</m:mn>
+              </m:msub>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+          </m:msubsup>
+          <m:mo>⊂</m:mo>
+          <m:msubsup>
+            <m:mi>B</m:mi>
+            <m:mrow>
+              <m:msub>
+                <m:mi>p</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+              <m:mo>,</m:mo>
+              <m:msub>
+                <m:mi>p</m:mi>
+                <m:mn>2</m:mn>
+              </m:msub>
+            </m:mrow>
+            <m:msub>
+              <m:mi>s</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+          </m:msubsup>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:mi> if </m:mi>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:msub>
+            <m:mi>p</m:mi>
+            <m:mn>1</m:mn>
+          </m:msub>
+          <m:mo>≤</m:mo>
+          <m:msub>
+            <m:mi>p</m:mi>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:mi> and </m:mi>
+          <m:mspace width="0.277778em"/>
+          <m:mspace width="0.277778em"/>
+          <m:msub>
+            <m:mi>s</m:mi>
+            <m:mn>1</m:mn>
+          </m:msub>
+          <m:mo>-</m:mo>
+          <m:msub>
+            <m:mi>s</m:mi>
+            <m:mn>2</m:mn>
+          </m:msub>
+          <m:mo>≥</m:mo>
+          <m:mi>d</m:mi>
+          <m:mrow>
+            <m:mo>(</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>/</m:mo>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mn>1</m:mn>
+            </m:msub>
+            <m:mo>-</m:mo>
+            <m:mn>1</m:mn>
+            <m:mo>/</m:mo>
+            <m:msub>
+              <m:mi>p</m:mi>
+              <m:mn>2</m:mn>
+            </m:msub>
+            <m:mo>)</m:mo>
+          </m:mrow>
+          <m:mo>,</m:mo>
+        </m:mrow>
+      </m:math>
+    </equation>
+    <para id="id2254611">with no other restrictions on the indices <m:math><m:mrow><m:msub><m:mi>s</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:msub><m:mi>s</m:mi><m:mn>2</m:mn></m:msub><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+In the case where <m:math><m:mi>Ω</m:mi></m:math> is a bounded domain, these embedding
+are compact if and only if the strict inequality <m:math><m:mrow><m:msub><m:mi>s</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:msub><m:mi>s</m:mi><m:mn>2</m:mn></m:msub><m:mo>&gt;</m:mo><m:mi>d</m:mi><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:msub><m:mi>p</m:mi><m:mn>1</m:mn></m:msub><m:mo>-</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:msub><m:mi>p</m:mi><m:mn>2</m:mn></m:msub><m:mo>)</m:mo></m:mrow></m:mrow></m:math> holds.
+The proof of these embeddings can be found in <link target-id="bid1" class="cnxn"/> for
+Sobolev spaces and <link target-id="bid6" class="cnxn"/> for Besov spaces.</para>
+    <para id="id2254728">As an exercise, let us see how these embeddings can be used to derive the range
+of <m:math><m:mi>r</m:mi></m:math> such that <m:math><m:mrow><m:msubsup><m:mi>B</m:mi><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>r</m:mi></m:msubsup><m:mrow><m:mo>(</m:mo><m:mrow><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mn>1</m:mn><m:mo>]</m:mo></m:mrow><m:mo>)</m:mo></m:mrow></m:mrow></m:math> can contain discontinuous functions. If
+<m:math><m:mrow><m:mi>r</m:mi><m:mo>&gt;</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math>, then there exists <m:math><m:mrow><m:mi>ε</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math> such that <m:math><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:mn>2</m:mn><m:mi>ε</m:mi><m:mo>&gt;</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math>; We remark
+that <m:math><m:mrow><m:msubsup><m:mi>B</m:mi><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>r</m:mi></m:msubsup><m:mo>⊂</m:mo><m:msubsup><m:mi>B</m:mi><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mrow><m:mi>r</m:mi><m:mo>-</m:mo><m:mi>ε</m:mi></m:mrow></m:msubsup><m:mo>⊂</m:mo><m:msubsup><m:mi>B</m:mi><m:mrow><m:mi>∞</m:mi><m:mo>,</m:mo><m:mi>∞</m:mi></m:mrow><m:mi>ε</m:mi></m:msubsup><m:mo>=</m:mo><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>ε</m:mi></m:msup></m:mrow></m:math>, so all functions in <m:math><m:msubsup><m:mi>B</m:mi><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>r</m:mi></m:msubsup></m:math> are
+continuous.
+Therefore only <m:math><m:msubsup><m:mi>B</m:mi><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mi>r</m:mi></m:msubsup></m:math> with <m:math><m:mrow><m:mi>r</m:mi><m:mo>≤</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math> can contain discontinuous
+functions. In the limiting case <m:math><m:mrow><m:mi>r</m:mi><m:mo>=</m:mo><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:math>, a closer inspection reveals that
+the functions in <m:math><m:msubsup><m:mi>B</m:mi><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>q</m:mi></m:mrow><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msubsup></m:math> are continuous if <m:math><m:mrow><m:mi>q</m:mi><m:mo>&lt;</m:mo><m:mi>∞</m:mi></m:mrow></m:math>, while
+<m:math><m:msubsup><m:mi>B</m:mi><m:mrow><m:mn>2</m:mn><m:mo>,</m:mo><m:mi>∞</m:mi></m:mrow><m:mrow><m:mn>1</m:mn><m:mo>/</m:mo><m:mn>2</m:mn></m:mrow></m:msubsup></m:math> includes discontinuous functions, such as the characteristic
+funciton of an interval <m:math><m:mrow><m:mo>[</m:mo><m:mn>0</m:mn><m:mo>,</m:mo><m:mi>a</m:mi><m:mo>]</m:mo></m:mrow></m:math> for <m:math><m:mrow><m:mn>0</m:mn><m:mo>&lt;</m:mo><m:mi>a</m:mi><m:mo>&lt;</m:mo><m:mn>1</m:mn></m:mrow></m:math>.</para>
+  </content>
+<bib:file>
+<bib:entry id="bid1">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Adams, R.</bib:author>
+        <bib:title>Sobolev Spaces</bib:title>
+        <bib:publisher>Academic Press</bib:publisher>
+        <bib:year>1975</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid2">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Cohen, A.</bib:author>
+        <bib:title>Numerical Analysis of Wavelet Methods</bib:title>
+        <bib:publisher>Elsevier</bib:publisher>
+        <bib:year>2003</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid3">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Daubechies, Ingrid</bib:author>
+        <bib:title>Ten Lectures on Wavelets</bib:title>
+        <bib:publisher>SIAM</bib:publisher>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address>Philadelphia, PA</bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note>Notes from the 1990 CBMS-NSF Conference on Wavelets and Applications at Lowell, MA</bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid4">
+      <bib:book>
+<!--required fields-->
+        <bib:author>DeVore, R.</bib:author>
+        <bib:title>Nonlinear Approximation</bib:title>
+        <bib:publisher>Acta Numerica</bib:publisher>
+        <bib:year>1998</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid5">
+      <bib:article>
+<!--required fields-->
+        <bib:author>R. DeVore, B. Jawerth, and V. Popov, </bib:author>
+        <bib:title>Compression of wavelet decompositions</bib:title>
+        <bib:journal>American Journal of Math</bib:journal>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume>114</bib:volume>
+        <bib:number/>
+        <bib:pages>737-285</bib:pages>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:article>
+    </bib:entry>
+<bib:entry id="bid6">
+      <bib:book>
+<!--required fields-->
+        <bib:author>H. Triebel</bib:author>
+        <bib:title>Theory of Function Spaces</bib:title>
+        <bib:publisher>Birkhauser</bib:publisher>
+        <bib:year>1983</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+</bib:file>
+
+
+</document>

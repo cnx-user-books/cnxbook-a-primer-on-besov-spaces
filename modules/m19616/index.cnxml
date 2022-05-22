@@ -1,0 +1,164 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:md="http://cnx.rice.edu/mdml" xmlns:bib="http://bibtexml.sf.net/">
+  <title>Towards fractional smoothness</title>
+  <metadata>
+  <md:content-id>m19616</md:content-id><md:title>Towards fractional smoothness</md:title>
+  <md:abstract>The following is a short introduction to Besov spaces
+and their characterization by means of approximation
+procedures as well as wavelet decompositions.</md:abstract>
+  <md:uuid>b47f2199-1533-4ab8-a88b-beb0c461ccbd</md:uuid>
+</metadata>
+
+<content>
+    <para id="id2253696">All the above spaces share the common feature that the regularity index is
+an integer. In many applications, one is interested to allow
+fractional order of smoothness, in order to describe the regularity
+of a function in a more precise way. The question thus arises of <emphasis>how to
+fill the gaps between integer smoothness classes</emphasis>. There
+are at least two instances where such a generalization is very natural:</para>
+    <list id="id2253715" list-type="bulleted">
+      <item id="uid1">In the case of <m:math><m:msup><m:mi>L</m:mi><m:mn>2</m:mn></m:msup></m:math>-Sobolev spaces <m:math><m:mrow><m:msup><m:mi>H</m:mi><m:mi>m</m:mi></m:msup><m:mo>:</m:mo><m:mo>=</m:mo><m:msup><m:mi>W</m:mi><m:mrow><m:mi>m</m:mi><m:mo>,</m:mo><m:mn>2</m:mn></m:mrow></m:msup></m:mrow></m:math> and when
+<m:math><m:mrow><m:mi>Ω</m:mi><m:mo>=</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:math>,
+we can define an equivalent norm based on the Fourier transform, since by
+Parseval's formula we have the norm equivalence
+<equation id="id2253808"><m:math mode="display"><m:mrow><m:msubsup><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mrow><m:msup><m:mi>H</m:mi><m:mi>m</m:mi></m:msup></m:mrow><m:mn>2</m:mn></m:msubsup><m:mo>∼</m:mo><m:msub><m:mo>∫</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:msub><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mo>|</m:mo><m:mi>ω</m:mi><m:mo>|</m:mo><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>m</m:mi></m:mrow></m:msup><m:msup><m:mrow><m:mo>|</m:mo><m:mover accent="true"><m:mi>f</m:mi><m:mo>^</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:mi>ω</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mi>d</m:mi><m:mi>ω</m:mi><m:mo>.</m:mo></m:mrow></m:math></equation>
+For a non-integer <m:math><m:mrow><m:mi>s</m:mi><m:mo>≥</m:mo><m:mn>0</m:mn></m:mrow></m:math>, it is thus natural
+to define the space <m:math><m:msup><m:mi>H</m:mi><m:mi>s</m:mi></m:msup></m:math> as the set of all <m:math><m:msup><m:mi>L</m:mi><m:mn>2</m:mn></m:msup></m:math> functions
+such that
+<equation id="id2254201"><m:math mode="display"><m:mrow><m:msubsup><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mrow><m:msup><m:mi>H</m:mi><m:mi>s</m:mi></m:msup></m:mrow><m:mn>2</m:mn></m:msubsup><m:mo>:</m:mo><m:mo>=</m:mo><m:msub><m:mo>∫</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:msub><m:msup><m:mrow><m:mo>(</m:mo><m:mn>1</m:mn><m:mo>+</m:mo><m:mo>|</m:mo><m:mi>ω</m:mi><m:mo>|</m:mo><m:mo>)</m:mo></m:mrow><m:mrow><m:mn>2</m:mn><m:mi>s</m:mi></m:mrow></m:msup><m:msup><m:mrow><m:mo>|</m:mo><m:mover accent="true"><m:mi>f</m:mi><m:mo>^</m:mo></m:mover><m:mrow><m:mo>(</m:mo><m:mi>ω</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mn>2</m:mn></m:msup><m:mi>d</m:mi><m:mi>ω</m:mi><m:mo>,</m:mo></m:mrow></m:math></equation>
+is finite.
+</item>
+      <item id="uid2">In the case of <m:math><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>m</m:mi></m:msup></m:math> spaces, we note that
+<m:math><m:mrow><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mo>≤</m:mo><m:mrow><m:mi>C</m:mi><m:mo>|</m:mo><m:mi>h</m:mi><m:mo>|</m:mo></m:mrow></m:mrow></m:math> if <m:math><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mn>1</m:mn></m:msup></m:mrow></m:math> for any
+<m:math><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:math>
+whereas for an arbitrary function <m:math><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mn>0</m:mn></m:msup></m:mrow></m:math>,
+<m:math><m:mrow><m:msub><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:msub><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow></m:mrow></m:math> might go to zero arbitrarily slow as
+<m:math><m:mrow><m:mo>|</m:mo><m:mi>h</m:mi><m:mo>|</m:mo><m:mo>→</m:mo><m:mn>0</m:mn></m:mrow></m:math>.
+This motivates the definition of the <emphasis>Hölder space</emphasis><m:math><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>s</m:mi></m:msup></m:math>, <m:math><m:mrow><m:mn>0</m:mn><m:mo>&lt;</m:mo><m:mi>s</m:mi><m:mo>&lt;</m:mo><m:mn>1</m:mn></m:mrow></m:math> consisting
+of those <m:math><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mn>0</m:mn></m:msup></m:mrow></m:math> such that
+<equation id="id2254614"><m:math mode="display"><m:mrow><m:munder><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:munder><m:mrow><m:mo>|</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo></m:mrow><m:mo>≤</m:mo><m:msup><m:mrow><m:mi>C</m:mi><m:mo>|</m:mo><m:mi>h</m:mi><m:mo>|</m:mo></m:mrow><m:mi>s</m:mi></m:msup><m:mo>.</m:mo></m:mrow></m:math></equation>
+If <m:math><m:mrow><m:mi>m</m:mi><m:mo>&lt;</m:mo><m:mi>s</m:mi><m:mo>&lt;</m:mo><m:mi>m</m:mi><m:mo>+</m:mo><m:mn>1</m:mn></m:mrow></m:math>, a natural definition of <m:math><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>s</m:mi></m:msup></m:math> is given by <m:math><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>m</m:mi></m:msup></m:mrow></m:math> and
+<m:math><m:mrow><m:msup><m:mi>∂</m:mi><m:mi>α</m:mi></m:msup><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mrow><m:mi>s</m:mi><m:mo>-</m:mo><m:mi>m</m:mi></m:mrow></m:msup></m:mrow></m:math>, <m:math><m:mrow><m:mo>|</m:mo><m:mi>α</m:mi><m:mo>|</m:mo><m:mo>=</m:mo><m:mi>m</m:mi></m:mrow></m:math>. It can be proved
+that this property can also be expressed by
+<equation id="id2254812"><m:math mode="display"><m:mrow><m:munder><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>x</m:mi><m:mo>∈</m:mo><m:mi>Ω</m:mi></m:mrow></m:munder><m:mrow><m:mo>|</m:mo></m:mrow><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mi>n</m:mi></m:msubsup><m:msup><m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>|</m:mo><m:mo>≤</m:mo><m:mi>C</m:mi><m:mo>|</m:mo><m:mi>h</m:mi><m:mo>|</m:mo></m:mrow><m:mi>s</m:mi></m:msup><m:mo>,</m:mo></m:mrow></m:math></equation>
+where <m:math><m:mrow><m:mi>n</m:mi><m:mo>&gt;</m:mo><m:mi>s</m:mi></m:mrow></m:math> and <m:math><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mi>n</m:mi></m:msubsup></m:math> is the <m:math><m:mi>n</m:mi></m:math>-th order
+finite difference operator defined recursively by
+<m:math><m:mrow><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mn>1</m:mn></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> and
+<m:math><m:mrow><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mi>n</m:mi></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mn>1</m:mn></m:msubsup><m:mrow><m:mo>(</m:mo><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mrow><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msubsup><m:mo>)</m:mo></m:mrow><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math> (for example
+<m:math><m:mrow><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mn>2</m:mn></m:msubsup><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>)</m:mo></m:mrow><m:mo>-</m:mo><m:mn>2</m:mn><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow><m:mo>+</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>-</m:mo><m:mn>2</m:mn><m:mi>h</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:math>). When <m:math><m:mi>s</m:mi></m:math> is not an integer, the spaces
+<m:math><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>s</m:mi></m:msup></m:math> that we have defined are also denoted as <m:math><m:msup><m:mi>W</m:mi><m:mrow><m:mi>s</m:mi><m:mo>,</m:mo><m:mi>∞</m:mi></m:mrow></m:msup></m:math>.
+The space <m:math><m:msup><m:mi mathvariant="script">C</m:mi><m:mi mathvariant="script">s</m:mi></m:msup></m:math> can be equiped with the norm
+<equation id="id2255200"><m:math mode="display"><m:mrow><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mrow><m:msup><m:mrow><m:mi mathvariant="script">C</m:mi></m:mrow><m:mi>s</m:mi></m:msup><m:mrow><m:mo>(</m:mo><m:mi>Ω</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:msub><m:mo>:</m:mo><m:mo>=</m:mo><m:msub><m:mrow><m:mo>∥</m:mo><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mrow><m:msup><m:mi>L</m:mi><m:mi>∞</m:mi></m:msup><m:mrow><m:mo>(</m:mo><m:mi>Ω</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:msub><m:mo>+</m:mo><m:munder><m:mo movablelimits="true" form="prefix">sup</m:mo><m:mrow><m:mi>h</m:mi><m:mo>∈</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:munder><m:msup><m:mrow><m:mo>|</m:mo><m:mi>h</m:mi><m:mo>|</m:mo></m:mrow><m:mrow><m:mo>-</m:mo><m:mi>s</m:mi></m:mrow></m:msup><m:msub><m:mrow><m:mo>∥</m:mo><m:msubsup><m:mi>Δ</m:mi><m:mi>h</m:mi><m:mi>n</m:mi></m:msubsup><m:mi>f</m:mi><m:mo>∥</m:mo></m:mrow><m:mrow><m:msup><m:mi>L</m:mi><m:mi>∞</m:mi></m:msup><m:mrow><m:mo>(</m:mo><m:mi>Ω</m:mi><m:mo>)</m:mo></m:mrow></m:mrow></m:msub><m:mo>.</m:mo></m:mrow></m:math></equation></item>
+    </list>
+    <para id="id2255353">Let us give two important instances in which the above spaces appear
+in a natural way. The first is the study of the restriction of a function
+<m:math><m:mrow><m:mi>f</m:mi><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mi>d</m:mi></m:msub><m:mo>)</m:mo></m:mrow></m:math> to a manifold of lower dimension, for example
+the hyperplane defined by <m:math><m:mrow><m:msub><m:mi>x</m:mi><m:mi>d</m:mi></m:msub><m:mo>=</m:mo><m:mn>0</m:mn></m:mrow></m:math>. If <m:math><m:mrow><m:mi>g</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mrow><m:mi>d</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mo>)</m:mo></m:mrow><m:mo>=</m:mo><m:mi>f</m:mi><m:mrow><m:mo>(</m:mo><m:msub><m:mi>x</m:mi><m:mn>1</m:mn></m:msub><m:mo>,</m:mo><m:mo>⋯</m:mo><m:mo>,</m:mo><m:msub><m:mi>x</m:mi><m:mrow><m:mi>d</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msub><m:mo>,</m:mo><m:mn>0</m:mn><m:mo>)</m:mo></m:mrow></m:mrow></m:math>
+is such a restriction, then it is known that
+<m:math><m:mrow><m:mi>f</m:mi><m:mo>∈</m:mo><m:msup><m:mi>H</m:mi><m:mi>s</m:mi></m:msup><m:mrow><m:mo>(</m:mo></m:mrow><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mi>d</m:mi></m:msup></m:mrow></m:math>
+for <m:math><m:mrow><m:mi>s</m:mi><m:mo>&gt;</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:math> implies
+that
+<m:math><m:mrow><m:mi>g</m:mi><m:mo>∈</m:mo><m:msup><m:mi>H</m:mi><m:mrow><m:mi>s</m:mi><m:mo>-</m:mo><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac></m:mrow></m:msup><m:mrow><m:mo>(</m:mo><m:msup><m:mi mathvariant="double-struck">R</m:mi><m:mrow><m:mi>d</m:mi><m:mo>-</m:mo><m:mn>1</m:mn></m:mrow></m:msup><m:mo>)</m:mo></m:mrow></m:mrow></m:math>.
+The second one is the study of the
+Brownian motion <m:math><m:mrow><m:mi>W</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math> on an interval <m:math><m:mi>I</m:mi></m:math>, for which it is known that
+<m:math><m:mrow><m:mi>W</m:mi><m:mo>(</m:mo><m:mi>t</m:mi><m:mo>)</m:mo></m:mrow></m:math> is almost surely in <m:math><m:msup><m:mi>C</m:mi><m:mrow><m:mfrac><m:mn>1</m:mn><m:mn>2</m:mn></m:mfrac><m:mo>-</m:mo><m:mi>ε</m:mi></m:mrow></m:msup></m:math> for all <m:math><m:mrow><m:mi>ε</m:mi><m:mo>&gt;</m:mo><m:mn>0</m:mn></m:mrow></m:math>.</para>
+  </content>
+<bib:file>
+<bib:entry id="bid1">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Adams, R.</bib:author>
+        <bib:title>Sobolev Spaces</bib:title>
+        <bib:publisher>Academic Press</bib:publisher>
+        <bib:year>1975</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid2">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Cohen, A.</bib:author>
+        <bib:title>Numerical Analysis of Wavelet Methods</bib:title>
+        <bib:publisher>Elsevier</bib:publisher>
+        <bib:year>2003</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid3">
+      <bib:book>
+<!--required fields-->
+        <bib:author>Daubechies, Ingrid</bib:author>
+        <bib:title>Ten Lectures on Wavelets</bib:title>
+        <bib:publisher>SIAM</bib:publisher>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address>Philadelphia, PA</bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note>Notes from the 1990 CBMS-NSF Conference on Wavelets and Applications at Lowell, MA</bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid4">
+      <bib:book>
+<!--required fields-->
+        <bib:author>DeVore, R.</bib:author>
+        <bib:title>Nonlinear Approximation</bib:title>
+        <bib:publisher>Acta Numerica</bib:publisher>
+        <bib:year>1998</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+<bib:entry id="bid5">
+      <bib:article>
+<!--required fields-->
+        <bib:author>R. DeVore, B. Jawerth, and V. Popov, </bib:author>
+        <bib:title>Compression of wavelet decompositions</bib:title>
+        <bib:journal>American Journal of Math</bib:journal>
+        <bib:year>1992</bib:year>
+<!--optional fields-->
+        <bib:volume>114</bib:volume>
+        <bib:number/>
+        <bib:pages>737-285</bib:pages>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:article>
+    </bib:entry>
+<bib:entry id="bid6">
+      <bib:book>
+<!--required fields-->
+        <bib:author>H. Triebel</bib:author>
+        <bib:title>Theory of Function Spaces</bib:title>
+        <bib:publisher>Birkhauser</bib:publisher>
+        <bib:year>1983</bib:year>
+<!--optional fields-->
+        <bib:volume/>
+        <bib:series/>
+        <bib:address> </bib:address>
+        <bib:edition/>
+        <bib:month/>
+        <bib:note> </bib:note>
+      </bib:book>
+    </bib:entry>
+</bib:file>
+
+
+</document>
